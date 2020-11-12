@@ -2,7 +2,7 @@
 
 <ul>
     <% @messages.each do |message| %>
-        <li><%= link_to message.id, message_path(message) %> : <%= message.content %></li> 
+        <li><%= link_to message.id, message_path(message) %> : <%= message.title %> &gt; <%= message.content %></li>  <!-- &gt; は特殊文字といい、<>がタグに使われてしまうhtmlにおいて強制的に'>'を表示する。 -->
 <!-- message_path(message)はmessageのみでも遷移する。ここでのmessage.idのmessageとmessage_pathのmessageは別物を考えるべきか。前者は変数、後者はリンク用メソッドの一部？ -->
     <% end %>
 </ul>
