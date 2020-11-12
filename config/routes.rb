@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
 =begin 
   #CRUD
-  get 'messages/:id', to: 'messages#show'
+  get 'messages/:id'　<- urlを表している！, to: 'messages#show' <- MessagesControllerのshowアクションを実行するという意味、省略されている。
   post 'messages', to: 'messages#create'
   put 'messages/:id', to: 'messages#update'
   delete 'messages/:id', to: 'messages#destroy'
@@ -19,6 +19,9 @@ Rails.application.routes.draw do
 =end
 
   root to: 'messages#index'
+  #トップページにアクセスした時のルーティングをMessagesControllerのindexアクションに設定している。
+  #何故 get '/' と書かない？
+  
   resources :messages
   #resources :messages, except: [:index] のような形で除外可能
 
