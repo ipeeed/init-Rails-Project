@@ -1,4 +1,4 @@
 <% flash.each do |message_type, message| %> <!-- flashはハッシュなので、eachで取り出すとkey, valueのペアで取り出される。
                                             今回はそれぞれsuccess or danger, 成功文 or 失敗文になる。keyは色付けに使い、valueはそのまま表示する。 -->
-    <div><%= message %></div>
+    <div class="alert alert-<%= message_type %>"><%= message %></div>
 <% end %>
